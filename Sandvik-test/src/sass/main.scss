@@ -1,0 +1,384 @@
+@use 'colors' as *;
+
+.container {
+  overflow: hidden;
+}
+
+.background {
+  height: 80vh;
+  background: url(../imges/header/header-img2.webp) 0% 65% no-repeat;
+  background-size: cover;
+}
+
+.background::after {
+  content: '';
+  height: 95%;
+  width: 100%;
+  inset: 0;
+  position: absolute;
+  background-color: rgba(28, 41, 61, 0.4);
+}
+
+header {
+  
+  button {
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    margin-top: 4rem;
+  }
+  
+  .row,
+  .container {
+    height: 100%;
+  }
+
+  .row {
+    align-items: center;
+  }
+  
+  h1 {
+    margin-top: 10rem;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    color: $light-text-color;
+    font-size: 3rem;
+    padding: 1rem 0;
+    border-bottom: 5px solid white;
+  }
+  
+  ul {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    top: 2rem;
+    position: relative;
+    justify-content: space-around;
+  }
+  
+  li {
+    color: #c7c7c7;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+}
+
+.sandvik-bar {
+  box-shadow: 0 0 0 100vmax $action-color;
+  clip-path: inset(0 -100vmax);
+  background-color: $action-color;
+  
+  &-logo {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about {
+  margin-bottom: 10rem;
+}
+
+.blue,
+.yellow,
+.about-img {
+  height: 45vh;
+  width: 95%;
+  position: absolute;
+}
+
+.about-img-cover,
+.about-img {
+  position: relative;
+}
+
+.about-img-cover {
+  margin: 9rem 0 0 6rem;
+}
+
+.blue {
+  z-index: 1;
+  inset: -2rem 0 0 -2rem;
+  background-color: $primary-color;
+}
+
+.yellow {
+  z-index: 1;
+  inset: 2rem 0 0 2rem;
+  background-color: $action-color;
+}
+
+.about-img {
+  z-index: 2;
+}
+
+.panels .row {
+  margin-top: 1.5rem;
+}
+
+.panel {
+  aspect-ratio: 1 / 1;
+  padding: 3rem;
+  color: $light-text-color;
+  height: 100%;
+  width: 100%;
+  background-color: $primary-color;
+}
+
+.img-first,
+.img-second {
+  background-size: cover;
+}
+
+.img-first {
+  background: url('../imges/images_1_about.jpg') right;
+}
+
+.img-second {
+  background: url('../imges/panel2.jpg') center;
+}
+
+.img-third {
+  background: url('../imges/about/drill_about.jpg') center;
+  background-size: cover;
+}
+
+#panels {
+  padding-top: 1rem;
+}
+
+.panel-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.panels-first-row {
+  margin-top: 0;
+}
+
+
+.same {
+  color: $text-color;
+  background-color: $panel-same-color;
+}
+
+.panel:has(img) {
+  padding: 0;
+}
+
+.owner {
+  color: $light-text-color;
+  background-color: $primary-color;
+  box-shadow: 0 0 0 100vmax $primary-color;
+  clip-path: inset(0 -100vmax);
+  padding-bottom: 10rem;
+}
+
+#form-button {
+  padding: 2rem 6rem;
+  position: relative;
+
+  p {
+    color: black;
+  }
+}
+
+form button:has(.error) {
+  background-color: red;
+}
+
+form button:has(.complete) {
+  background-color: rgb(0, 255, 0);
+}
+
+
+.text {
+  transition: all 1s ease-out;
+  margin: 0 auto;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+}
+
+.first {
+  top: .9rem;
+}
+
+.second {
+  top: 135px;
+}
+
+.third {
+  top: 135px;
+}
+
+.fourth {
+  top: 135px;
+}
+
+.first.text.anim {
+  top: -100px;
+}
+
+.second.text.anim {
+  top: .9rem;
+}
+
+.second.text.anim.complete {
+  top: -100px;
+}
+
+.third.text.anim.complete {
+  top: .9rem;
+}
+
+.second.text.anim.error {
+  top: -100px;
+}
+
+.fourth.text.anim.error {
+  top: .9rem;
+}
+
+button {
+  overflow: hidden;
+  background-color: $action-color;
+  color: $light-text-color;
+}
+
+.contact-form {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  padding: 2rem 3rem;
+  border: 7px solid $primary-color;
+}
+
+.navbar {
+  color: $light-text-color;
+  background-color: $primary-color;
+  
+  .nav-flex {
+    padding: .7rem 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  a {
+    font-size: 1.3rem;
+    color: $light-text-color;
+    text-decoration: none;
+  }
+  
+}
+
+.owner {
+  p {
+    font-size: 1rem;
+    margin: 2rem 0;
+    font-weight: normal;
+  }
+  
+  &-second-img {
+    height: auto;
+    margin-top: 5rem;
+  }
+  
+  &-first-img {
+    height: 350px;
+  }
+}
+
+.p-container {
+  margin-top: 5rem;
+}
+
+.contacts {
+  
+  img {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin: 0;
+  }
+  
+  p,
+  a {
+    font-size: 1.7rem;
+  }
+  
+  a {
+    color: $text-color;
+    display: block;
+  }
+}
+
+.contact-flex {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+  align-items: center;
+  
+  input {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .input-cover {
+    border: 1px solid gray;
+    padding: .5rem;
+    width: 60%;
+    height: 3rem;
+    position: relative;
+  }
+  
+  label {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    padding: .2rem;
+    background: white;
+    inset: 0;
+    font-size: 1rem;
+    transform: translate(1rem, -45%);
+  }
+  
+}
+
+nav img {
+  height: 70%;
+  width: 70%;
+}
+
+._error {
+  ::-webkit-input-placeholder {
+    color: red;
+  }
+  color: red;
+}
+
+._error-anim {
+  animation: shake .5s forwards;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+}

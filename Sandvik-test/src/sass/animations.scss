@@ -1,0 +1,57 @@
+.hidden-anim, .panel {
+  opacity: 0;
+}
+
+.show-anim {
+  animation-name: right-to-left;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+.show-anim:has(h2) {
+  animation-name: left-to-right;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+.show-anim.panel {
+  animation-name: right-to-left;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+.second-row.show-anim {
+  animation-name: left-to-right;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-1deg);
+  }
+}

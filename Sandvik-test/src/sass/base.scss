@@ -1,0 +1,223 @@
+@use 'colors' as *;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
+input {
+  font-size: .8rem;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+r {
+  color: red;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Hind', sans-serif;
+  font-size: 10px;
+}
+
+section {
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+input,
+input:hover,
+input:active {
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $action-color;
+}
+
+a {
+  transition: all .2s;
+
+  &:hover {
+    color: $action-color !important;
+  }
+
+  nav &:hover {
+    transform: translateY(-20%);
+  }
+}
+
+button {
+  transition: .2s all;
+  color: $text-color !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: none;
+  padding: .8rem 3rem;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: translateY(5%);
+  background-color: darken($action-color, 10%);
+}
+
+.about .container {
+  padding-bottom: 2rem;
+}
+
+.panels-first-row {
+  margin-top: 0;
+}
+
+.hamburger-nav {
+  display: none;
+}
+
+.hamburger-cover {
+  position: relative;
+
+  span,
+  span::after,
+  span::before {
+    transform-origin: 50%;
+    content: '';
+    z-index: 2;
+    position: absolute;
+    inset: 0;
+    width: 1.8rem;
+    height: .2rem;
+    border-radius: 5px;
+    background-color: $light-text-color;
+  }
+
+  span::after {
+    transform: translateY(.5rem);
+  }
+
+  span::before {
+    transform: translateY(-.5rem);
+  }
+}
+
+.hamburger-menu-cover {
+  transition: .2s all ease-out;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
+  align-items: center;
+  background-color: $primary-color;
+  z-index: 33;
+  position: fixed;
+  inset: 0;
+  padding: 1rem;
+  padding-top: 5rem;
+  height: 100%;
+  width: 100%;
+
+  a {
+    font-size: 1.6rem;
+    color: $light-text-color;
+    position: relative;
+    z-index: 34;
+  }
+}
+
+.hamburger-menu-cover.open {
+  transform: translateX(0);
+}
+
+.hamburger-cover.open {
+
+  span,
+  span::after,
+  span::before {
+    transition: .2s .2s rotate, .2s background-color, .2s transform;
+  }
+}
+
+
+.hamburger-cover.open {
+  span {
+    background-color: $primary-color;
+
+    &::after {
+      transform: translateY(0);
+      rotate: 45deg;
+    }
+
+    &::before {
+      transform: translateY(0);
+      rotate: -45deg;
+    }
+  }
+}
+
+.hamburger-cover {
+
+  span,
+  span::after,
+  span::before {
+    transition: rotate .2s, background-color .2s .2s, transform .2s .2s;
+  }
+}
+
+.hamburger-cover {
+  span {
+
+    background-color: $light-text-color;
+
+    &::after {
+      transform: translateY(.5rem);
+      rotate: 0;
+    }
+
+    &::before {
+      transform: translateY(-.5rem);
+      rotate: 0;
+    }
+  }
+}
+
+body.open {
+  overflow: hidden;
+}
